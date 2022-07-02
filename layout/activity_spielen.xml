@@ -1,0 +1,302 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.adt.blackjack.SpielenActivity"
+    android:background="@drawable/hintergrundbild2"
+    android:id="@+id/relativeLayout1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/spielNrText"
+        android:id="@+id/tvSpielNr"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/nullText"
+        android:id="@+id/tvSpielZaehler"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/spielerText"
+        android:id="@+id/tvSpieler"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvSpielNr" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/punkteText"
+        android:id="@+id/tvPunkteSpieler"
+        android:layout_alignTop="@+id/tvSpieler"
+        android:layout_alignLeft="@+id/tvSpielZaehler"
+        android:layout_alignStart="@+id/tvSpielZaehler" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/punkteSpielerText"
+        android:id="@+id/tvPunkteZaehlerSpieler"
+        android:layout_alignTop="@+id/tvPunkteSpieler"
+        android:layout_toRightOf="@+id/tvPunkteSpieler"
+        android:layout_toEndOf="@+id/tvPunkteSpieler"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/croupierText"
+        android:id="@+id/tvCroupier"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/punkteText"
+        android:id="@+id/tvPunkteCroupier"
+        android:layout_alignTop="@+id/tvCroupier"
+        android:layout_alignLeft="@+id/tvPunkteSpieler"
+        android:layout_alignStart="@+id/tvPunkteSpieler" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/punkteCroupierText"
+        android:id="@+id/tvPunkteZaehlerCroupier"
+        android:layout_alignTop="@+id/tvPunkteCroupier"
+        android:layout_alignLeft="@+id/tvPunkteZaehlerSpieler"
+        android:layout_alignStart="@+id/tvPunkteZaehlerSpieler"
+        android:textIsSelectable="false" />
+
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="62dp"
+    android:text="@string/spielStartenText"
+    android:id="@+id/bSpielStarten"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_toLeftOf="@+id/tvPunkteCroupier"
+    android:layout_toStartOf="@+id/tvPunkteCroupier"
+    android:visibility="visible"
+    android:onClick="spielStarten" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="62dp"
+        android:text="@string/karteZiehenText"
+        android:id="@+id/bKartenZiehen"
+        android:visibility="invisible"
+        android:onClick="karteZiehen"
+        android:layout_alignTop="@+id/bSpielStarten"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/bSpielStarten"
+        android:layout_alignEnd="@+id/bSpielStarten" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="62dp"
+        android:text="@string/ergebnisAnzeigenText"
+        android:id="@+id/bErgebnisseAnzeigen"
+        android:onClick="ergebnisseAnzeigen"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:visibility="visible"
+        android:layout_toEndOf="@+id/tvSpielZaehler"
+        android:layout_toRightOf="@+id/tvSpielZaehler" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="62dp"
+        android:text="@string/aufhoerenText"
+        android:id="@+id/bAufhoeren"
+        android:onClick="aufhoeren"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:visibility="invisible"
+        android:layout_toEndOf="@+id/tvSpielZaehler"
+        android:layout_toRightOf="@+id/tvSpielZaehler" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/tvSpieler"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/tvCroupier"
+        android:id="@+id/frameLayout1">
+
+        <ImageView
+            android:layout_width="79dp"
+            android:layout_height="126dp"
+            android:id="@+id/imageView1"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/ka_0"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="129dp"
+            android:layout_height="124dp"
+            android:id="@+id/imageView2"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/ka_0"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="179dp"
+            android:layout_height="124dp"
+            android:id="@+id/imageView3"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/ka_0"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="229dp"
+            android:layout_height="124dp"
+            android:id="@+id/imageView4"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/ka_0"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="279dp"
+            android:layout_height="124dp"
+            android:id="@+id/imageView5"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/ka_0"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="329dp"
+            android:layout_height="124dp"
+            android:id="@+id/imageView6"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/ka_0"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="379dp"
+            android:layout_height="124dp"
+            android:id="@+id/imageView7"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/ka_0"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="429dp"
+            android:layout_height="124dp"
+            android:id="@+id/imageView8"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/ka_0"
+            android:scaleType="fitCenter" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/tvCroupier"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/bErgebnisseAnzeigen"
+        android:id="@+id/frameLayout2">
+
+        <ImageView
+            android:layout_width="79dp"
+            android:layout_height="126dp"
+            android:id="@+id/imageView9"
+            android:layout_gravity="left|center_vertical"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ka_0" />
+
+        <ImageView
+            android:layout_width="129dp"
+            android:layout_height="124dp"
+            android:id="@+id/imageView10"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/ka_0"
+            android:focusableInTouchMode="true" />
+
+        <ImageView
+            android:layout_width="179dp"
+            android:layout_height="124dp"
+            android:id="@+id/imageView11"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/ka_0"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="229dp"
+            android:layout_height="124dp"
+            android:id="@+id/imageView12"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/ka_0"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="279dp"
+            android:layout_height="124dp"
+            android:id="@+id/imageView13"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/ka_0"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="329dp"
+            android:layout_height="124dp"
+            android:id="@+id/imageView14"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/ka_0"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="379dp"
+            android:layout_height="124dp"
+            android:id="@+id/imageView15"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/ka_0"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="429dp"
+            android:layout_height="124dp"
+            android:id="@+id/imageView16"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/ka_0"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar" />
+    </FrameLayout>
+
+
+</RelativeLayout>
